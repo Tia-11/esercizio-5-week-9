@@ -1,5 +1,6 @@
 import * as Icon from 'react-bootstrap-icons';
 import logo from '../logo.png'
+import { Link } from 'react-router-dom';
 
 
 
@@ -27,10 +28,10 @@ function MyNavbar() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link active fw-bold" href="#homr">Home</a>
+          <Link to="/" className="nav-link fw-bold">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link fw-bold" href="#home">TV Shows</a>
+          <Link to="/tvshows" className="nav-link fw-bold">TV Shows</Link>
           </li>
           <li className="nav-item">
             <a className="nav-link fw-bold" href="#home">Movies</a>

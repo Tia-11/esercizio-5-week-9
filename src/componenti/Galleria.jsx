@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Galleria extends Component {
 
@@ -33,26 +34,27 @@ class Galleria extends Component {
     
 
  render() {
-    return(
-      <div>
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 mb-4 me-2 ms-2 ">
-          {this.state.movies.map((movie) => {
-            return (
-            <div key={movie.imdbID} className="col mb-2 text-center px-1 " >
-              <img
-                style={{width:'20em',height:'30em', objectFit: 'cover'}}
-                className="img-fluid "
-                src={movie.Poster}
-                alt={movie.Title}
-              />
+  return (
+    <div>
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 mb-4 me-2 ms-2">
+        {this.state.movies.map((movie) => {
+          return (
+            <div key={movie.imdbID} className="col mb-2 text-center px-1">
+              <Link to={`/movie-details/${movie.imdbID}`}>
+                <img
+                  style={{ width: '20em', height: '30em', objectFit: 'cover' }}
+                  className="img-fluid"
+                  src={movie.Poster}
+                  alt={movie.Title}
+                />
+              </Link>
             </div>
-            )
-            })
-          }
-        </div>
+          );
+        })}
       </div>
-    );
-  }
+    </div>
+  );
+}
 }
 
 
